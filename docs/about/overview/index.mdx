@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## How it works
 
-When you send a message on your Meshtastic companion app, it is relayed to the radio using Bluetooth. That message is then broadcasted by the radio. If it hasn't received a confirmation from any other device after a certain timeout, it will retransmit the message up to three times.
+When you send a message on your Meshtastic companion app, it is relayed to the radio using Bluetooth (if a Bluetooth connection is not currently available at the time that the message is received, the message is added to a small cache (up to 32 messages at the time of writing), that will be stored for future delivery once a receiving device is connected. That message is then broadcast by the radio. If it hasn't received a confirmation from any other device after a certain timeout, it will retransmit the message up to three times.
 
 When a receiving radio captures a packet, it checks to see if it has heard that message before. If it has it ignores the message. If it hasn't heard the message, it will rebroadcast it.
 
